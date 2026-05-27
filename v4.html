@@ -35,7 +35,7 @@
   .nav-context { font-size: 12px; color: var(--stone-700); font-weight: var(--fw-medium); letter-spacing: 0.1px; }
   .nav-context strong { color: var(--navy-900); font-weight: var(--fw-bold); }
   .nav-links { display: none; margin-left: auto; gap: 22px; }
-  .nav-links a { color: var(--navy-900); font-size: 14px; font-weight: var(--fw-bold); text-decoration: none; white-space: nowrap; }
+  .nav-links a { color: var(--stone-700); font-size: 13px; font-weight: var(--fw-medium); text-decoration: none; }
   .nav-links a:hover { color: var(--mint-700); }
   .nav-cta { margin-left: auto; }
   @media (min-width: 980px) {
@@ -97,7 +97,7 @@
     position: relative; overflow: hidden;
     background: var(--mint-500);
     color: var(--navy-900);
-    padding: 56px 32px 0;
+    padding: 80px 32px 0;
   }
   /* The brand's cloud/scallop motif rising from the bottom */
   .hero-scallop {
@@ -117,7 +117,7 @@
   .hero-inner {
     max-width: 1200px; margin: 0 auto;
     display: grid; grid-template-columns: 1.35fr 1fr;
-    gap: 64px; align-items: start;
+    gap: 64px; align-items: end;
     padding-bottom: 120px;
     position: relative; z-index: 1;
   }
@@ -144,25 +144,21 @@
     letter-spacing: -0.025em;
     line-height: 1.02;
     color: var(--navy-900);
-    margin: 0 0 16px;
+    margin: 24px 0 22px;
     text-wrap: balance;
   }
   .hero h1 em {
     font-style: normal;
-    color: var(--navy-900);
-    background: none;
-    padding: 0;
-    border-radius: 0;
-    font-size: 0.6em;
-    font-weight: var(--fw-regular);
-    opacity: 0.42;
-    margin: 0 0.04em;
-    vertical-align: 0.22em;
-    font-family: var(--font-sans);
+    color: #fff;
+    background: var(--navy-900);
+    padding: 0 0.08em;
+    border-radius: 8px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
   .hero-sub {
     font-size: 19px; line-height: 1.55; color: var(--navy-900);
-    max-width: 540px; opacity: 0.85; margin: 0 0 24px;
+    max-width: 540px; opacity: 0.85; margin: 0 0 18px;
     font-weight: var(--fw-medium);
   }
   .hero-context {
@@ -187,51 +183,33 @@
     color: var(--navy-900);
     position: relative;
   }
-  .meeting-eyebrow {
+  .meeting-card-eyebrow {
+    display: flex; align-items: center; justify-content: space-between;
     font-size: 11px; font-weight: var(--fw-bold);
     letter-spacing: 2px; text-transform: uppercase;
-    color: var(--mint-700);
+    color: var(--stone-700);
+    padding-bottom: 18px; border-bottom: 1px solid var(--stone-200);
   }
-  .meeting-title {
-    font-size: 22px; font-weight: var(--fw-bold);
-    color: var(--navy-900); margin: 6px 0 20px;
-    letter-spacing: -0.008em; line-height: 1.2;
+  .meeting-card-eyebrow .pill {
+    background: var(--mint-100); color: var(--mint-800);
+    padding: 4px 10px; border-radius: 999px;
+    font-size: 10px; letter-spacing: 1.5px;
   }
-  .meeting-when {
-    display: grid; grid-template-columns: 68px 1fr;
-    gap: 16px; align-items: center;
-    padding: 20px 0;
-    border-top: 1px solid var(--stone-200);
+  .meeting-date {
+    display: flex; align-items: baseline; gap: 12px; margin: 22px 0 4px;
   }
-  .meeting-when-date {
-    display: flex; flex-direction: column; align-items: center;
-    background: var(--mint-100);
-    border-radius: var(--radius-lg);
-    padding: 10px 0;
+  .meeting-date .day {
+    font-size: 56px; font-weight: var(--fw-black);
+    letter-spacing: -0.03em; line-height: 1; color: var(--navy-900);
   }
-  .meeting-when-date .day {
-    font-size: 30px; font-weight: var(--fw-black);
-    letter-spacing: -0.02em; line-height: 1;
+  .meeting-date .my {
+    font-size: 16px; font-weight: var(--fw-bold);
     color: var(--navy-900);
-    font-feature-settings: "tnum";
   }
-  .meeting-when-date .mon {
-    font-size: 10px; font-weight: var(--fw-bold);
-    letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--mint-800); margin-top: 5px;
-  }
-  .meeting-when-meta {
-    display: flex; flex-direction: column; gap: 4px;
-    min-width: 0;
-  }
-  .meeting-when-meta .l1 {
-    font-size: 15px; font-weight: var(--fw-bold);
-    color: var(--navy-900); letter-spacing: -0.005em;
-  }
-  .meeting-when-meta .l2,
-  .meeting-when-meta .l3 {
-    font-size: 13px; color: var(--stone-700);
-    font-weight: var(--fw-medium); line-height: 1.4;
+  .meeting-date .my .yr { color: var(--stone-500); font-weight: var(--fw-medium); }
+  .meeting-time {
+    font-size: 14px; color: var(--stone-700); font-weight: var(--fw-medium);
+    margin-bottom: 22px;
   }
   .meeting-attendees {
     border-top: 1px solid var(--stone-200);
@@ -1497,14 +1475,14 @@
       <img src="assets/reeco-logo-primary-green.svg" alt="Reeco">
     </a>
     <div class="nav-divider" aria-hidden="true"></div>
-    <div class="nav-context">Prepared for <strong>Peregrine Hospitality</strong></div>
+    <div class="nav-context">prepared for <strong>Peregrine Hospitality</strong> &nbsp;<span style="color:var(--stone-400)">///</span>&nbsp; june 3, 2026</div>
     <div class="nav-links">
-      <a href="#problem">Problem &amp; Solution</a>
-      <a href="#platform">Platform</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#integration">Integration</a>
-      <a href="#library">Library</a>
-      <a href="#faq">FAQ</a>
+      <a href="#problem">problem &amp; solution</a>
+      <a href="#platform">platform</a>
+      <a href="#pricing">pricing</a>
+      <a href="#integration">integration</a>
+      <a href="#library">library</a>
+      <a href="#faq">faq</a>
     </div>
     <a href="https://calendar.app.google/98SYgLUXy6JNJTvr8" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Schedule 30 min <span class="arr">→</span></a>
   </div>
@@ -1514,12 +1492,12 @@
 <section class="hero" id="top">
   <div class="hero-inner">
     <div>
-      <h1>Peregrine <em>&times;</em> Reeco</h1>
-      <div class="hero-eyebrow" style="margin-bottom: 28px;"><span class="live-dot"></span>Digital Sales Room</div>
-      <p class="hero-sub">A hospitality-native procurement platform built to replace complexity with clarity, across purchasing, AP automation, inventory, and culinary management.</p>
+      <div class="hero-eyebrow"><span class="live-dot"></span>private digital sales room</div>
+      <h1>Damion, Stacy, Meaghan — <em>here's everything</em> ahead of June 3.</h1>
+      <p class="hero-sub">A hospitality-native procurement platform built to replace complexity with clarity — across purchasing, AP automation, inventory, and culinary management.</p>
       <div class="hero-context">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9z"/></svg>
-        Built for Peregrine Hospitality &nbsp;<span class="sep">///</span>&nbsp; Resort + Select-Service &nbsp;<span class="sep">///</span>&nbsp; Sage Intacct + Profit Sword
+        Built for Peregrine Hospitality &nbsp;<span class="sep">///</span>&nbsp; resort + select‑service &nbsp;<span class="sep">///</span>&nbsp; Sage Intacct + Profit Sword
       </div>
       <div class="hero-actions">
         <a href="https://calendar.app.google/98SYgLUXy6JNJTvr8" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="background: var(--navy-900);">Schedule 30 minutes with Zander <span class="arr">→</span></a>
@@ -1528,19 +1506,15 @@
     </div>
 
     <aside class="meeting-card" aria-label="Meeting context">
-      <div class="meeting-eyebrow">Next Step</div>
-      <div class="meeting-title">Proposal Meeting</div>
-      <div class="meeting-when">
-        <div class="meeting-when-date">
-          <span class="day">03</span>
-          <span class="mon">Jun</span>
-        </div>
-        <div class="meeting-when-meta">
-          <div class="l1">Wednesday, June 3, 2026</div>
-          <div class="l2">10:00 AM MT &nbsp;·&nbsp; 30 minutes</div>
-          <div class="l3">Demo + Proposal Review</div>
-        </div>
+      <div class="meeting-card-eyebrow">
+        <span>your proposal meeting</span>
+        <span class="pill">8 days out</span>
       </div>
+      <div class="meeting-date">
+        <span class="day">03</span>
+        <span class="my">June<br><span class="yr">2026</span></span>
+      </div>
+      <div class="meeting-time">10:00 AM MT &nbsp;·&nbsp; 30 minutes &nbsp;·&nbsp; demo + proposal review</div>
 
       <div class="meeting-attendees">
         <div class="attendee-label">Peregrine</div>
@@ -1586,33 +1560,33 @@
       </div>
     </aside>
   </div>
-
+  <div class="hero-scallop" aria-hidden="true"></div>
 </section>
 
 <!-- ──────────── HERO TIMELINE (what happens after June 3) ──────────── -->
 <div class="hero-timeline">
   <div class="hero-timeline-card">
     <div class="hero-timeline-label">
-      <div class="hero-timeline-eyebrow">/// What Happens Next</div>
-      <div class="hero-timeline-title">From Here to Kickoff</div>
+      <div class="hero-timeline-eyebrow">/// what happens next</div>
+      <div class="hero-timeline-title">From here to kickoff</div>
     </div>
     <div class="ht-step">
-      <div class="ht-step-num">Step 01</div>
+      <div class="ht-step-num">step 01</div>
       <div class="ht-step-title">Demo + proposal review</div>
       <div class="ht-step-date">June 3, 2026 · 10:00 AM MT</div>
     </div>
     <div class="ht-step future">
-      <div class="ht-step-num">Step 02</div>
+      <div class="ht-step-num">step 02</div>
       <div class="ht-step-title">Contract review</div>
       <div class="ht-step-date">June 2026 · MSA + legal</div>
     </div>
     <div class="ht-step future">
-      <div class="ht-step-num">Step 03</div>
+      <div class="ht-step-num">step 03</div>
       <div class="ht-step-title">Implementation alignment</div>
       <div class="ht-step-date">June – July 2026 · scoping + sequencing</div>
     </div>
     <div class="ht-step future">
-      <div class="ht-step-num">Step 04</div>
+      <div class="ht-step-num">step 04</div>
       <div class="ht-step-title">Kickoff</div>
       <div class="ht-step-date">July – August 2026 · Intacct sync live</div>
     </div>
@@ -1622,7 +1596,7 @@
 <!-- ──────────── SECTION 02: PROBLEM + SOLUTION (merged) ──────────── -->
 <section id="problem">
   <div class="container">
-    <div class="eyebrow">Section 02 &nbsp;/&nbsp; Business Case + Proposed Solution</div>
+    <div class="eyebrow">section 02 &nbsp;/&nbsp; business case + proposed solution</div>
     <h2 class="section-title">The problem you're solving — and how Reeco closes it.</h2>
     <p class="section-sub">Three pain points. Three direct answers.</p>
 
@@ -1630,7 +1604,7 @@
       <div class="ps-pair">
         <div class="ps-num">01</div>
         <div class="ps-card problem">
-          <div class="ps-eyebrow problem"><span class="ps-dot"></span>The Problem</div>
+          <div class="ps-eyebrow problem"><span class="ps-dot"></span>the problem</div>
           <h3 class="ps-headline">Procurement set up for the wrong business.</h3>
           <p class="ps-body">A platform designed for global manufacturers was deployed to a complex, mixed-brand portfolio — with no accommodation for how select-service hotel operations actually work. The result: friction at every property level and low adoption across the portfolio.</p>
         </div>
@@ -1638,7 +1612,7 @@
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
         <div class="ps-card answer">
-          <div class="ps-eyebrow answer"><span class="ps-dot"></span>The Answer</div>
+          <div class="ps-eyebrow answer"><span class="ps-dot"></span>the answer</div>
           <h3 class="ps-headline">Built for hotels. Only for hotels.</h3>
           <p class="ps-body">Reeco is purpose-built for hospitality operations. Property staff interact with an item-first marketplace — browse, compare prices across suppliers side-by-side, submit a PO. No punch-out, no complex menus.</p>
         </div>
@@ -1647,7 +1621,7 @@
       <div class="ps-pair">
         <div class="ps-num">02</div>
         <div class="ps-card problem">
-          <div class="ps-eyebrow problem"><span class="ps-dot"></span>The Problem</div>
+          <div class="ps-eyebrow problem"><span class="ps-dot"></span>the problem</div>
           <h3 class="ps-headline">The procure-to-pay loop was never fully closed.</h3>
           <p class="ps-body">Without native inventory, without intelligent invoice coding, and without a checkbook tied to your operating budget, that loop stays open — and your team fills the gaps manually.</p>
         </div>
@@ -1655,7 +1629,7 @@
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
         <div class="ps-card answer">
-          <div class="ps-eyebrow answer"><span class="ps-dot"></span>The Answer</div>
+          <div class="ps-eyebrow answer"><span class="ps-dot"></span>the answer</div>
           <h3 class="ps-headline">AP automation purpose-built for hospitality finance teams.</h3>
           <p class="ps-body">Every invoice organized, AI-coded by line item and supplier, matched against the PO, and queued for Intacct sync. The coding learns over time — intelligent line-item behavior from the moment you go live.</p>
         </div>
@@ -1664,7 +1638,7 @@
       <div class="ps-pair">
         <div class="ps-num">03</div>
         <div class="ps-card problem">
-          <div class="ps-eyebrow problem"><span class="ps-dot"></span>The Problem</div>
+          <div class="ps-eyebrow problem"><span class="ps-dot"></span>the problem</div>
           <h3 class="ps-headline">Visibility at the corporate level is limited.</h3>
           <p class="ps-body">Without a direct integration pushing live PO spend data into Profit Sword, GMs can't see where they stand against budget until it's too late to act. Month-end becomes a surprise review instead of a confirmation.</p>
         </div>
@@ -1672,7 +1646,7 @@
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
         <div class="ps-card answer">
-          <div class="ps-eyebrow answer"><span class="ps-dot"></span>The Answer</div>
+          <div class="ps-eyebrow answer"><span class="ps-dot"></span>the answer</div>
           <h3 class="ps-headline">PO approvals tied directly to your Profit Sword forecast.</h3>
           <p class="ps-body">Before a PO is approved, Reeco shows the approver where that spend lands against the current GL budget. GMs see the variance in real time and make the call before the order goes out. Intacct integration is direct — once credentials are configured, data flows automatically with no manual mapping.</p>
         </div>
@@ -1698,7 +1672,7 @@
 <!-- ──────────── SECTION 03: THE PLATFORM ──────────── -->
 <section id="platform" class="platform-section">
   <div class="container">
-    <div class="eyebrow">Section 03 &nbsp;/&nbsp; The Platform</div>
+    <div class="eyebrow">section 03 &nbsp;/&nbsp; the platform</div>
     <h2 class="section-title">What's included.</h2>
     <p class="section-sub">Four modules. One login. Built for hospitality back-of-house from the ground up.</p>
 
@@ -1763,9 +1737,9 @@
 <!-- ──────────── SECTION 04: PRICING ──────────── -->
 <section id="pricing" class="pricing-section">
   <div class="container">
-    <div class="eyebrow">Section 04 &nbsp;/&nbsp; Pricing</div>
+    <div class="eyebrow">section 04 &nbsp;/&nbsp; pricing</div>
     <h2 class="section-title">Pricing structured for your portfolio.</h2>
-    <p class="section-sub">The proposal below was prepared for Peregrine following your April 8 discovery call. A 10-percent enterprise discount has been applied across all modules.</p>
+    <p class="section-sub">The proposal below was prepared for Peregrine following your April 8 discovery call. A 10% enterprise discount has been applied across all modules.</p>
 
     <div class="pricing-v2">
       <div class="pricing-v2-header">
@@ -1774,8 +1748,8 @@
           <p>Modules priced per property, per month. Total reflects the full 10% enterprise discount.</p>
         </div>
         <div class="pricing-v2-discount">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          10-Percent Enterprise Discount Applied
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          10% enterprise discount applied
         </div>
       </div>
 
@@ -1859,7 +1833,7 @@
 <!-- ──────────── SECTION 05: INTEGRATION & IMPLEMENTATION ──────────── -->
 <section id="integration" class="integration-section">
   <div class="container">
-    <div class="eyebrow">Section 05 &nbsp;/&nbsp; Integration &amp; Implementation</div>
+    <div class="eyebrow">section 05 &nbsp;/&nbsp; integration &amp; implementation</div>
     <h2 class="section-title">How we connect and how we go live.</h2>
     <p class="section-sub">A typical Reeco enterprise rollout for a mixed-brand portfolio — a plan specific to Peregrine will be presented on June 3.</p>
 
@@ -1867,24 +1841,24 @@
       <div class="stack-card connect">
         <div class="stack-label">Accounting</div>
         <div class="stack-name">Sage Intacct</div>
-        <div class="stack-status connect">✓ Direct</div>
+        <div class="stack-status connect">✓ direct</div>
         <div class="stack-detail">Automatic data sync once credentials are configured.</div>
       </div>
       <div class="stack-card connect">
         <div class="stack-label">F&amp;B / Budget</div>
         <div class="stack-name">Profit Sword</div>
-        <div class="stack-status connect">✓ Two-Way</div>
+        <div class="stack-status connect">✓ two-way</div>
         <div class="stack-detail">Reeco pushes daily PO spend; budget/GL data flows back.</div>
       </div>
       <div class="stack-card connect">
         <div class="stack-label">POS</div>
         <div class="stack-name">Toast / Micros Symphony</div>
-        <div class="stack-status connect">✓ Supported</div>
+        <div class="stack-status connect">✓ supported</div>
       </div>
       <div class="stack-card connect">
         <div class="stack-label">GPO</div>
         <div class="stack-name">Food Buy</div>
-        <div class="stack-status connect">✓ Ready to Integrate</div>
+        <div class="stack-status connect">✓ ready to integrate</div>
       </div>
     </div>
 
@@ -1902,23 +1876,23 @@
       <div class="timeline">
         <div class="timeline-header">
           <h3>Rollout sequence</h3>
-          <div class="legend">Full Plan Delivered June 3</div>
+          <div class="legend">full plan delivered June 3</div>
         </div>
         <div class="timeline-rows">
           <div class="timeline-row">
             <div class="timeline-phase"><span class="dot"></span>Phase 0</div>
             <div class="timeline-activity">Contract execution + kickoff — integration credentials configured; Intacct sync goes live</div>
-            <div class="timeline-target">Kickoff</div>
+            <div class="timeline-target">kickoff</div>
           </div>
           <div class="timeline-row">
             <div class="timeline-phase"><span class="dot"></span>Phase 1</div>
             <div class="timeline-activity">Select-service properties first — simpler setup, faster adoption</div>
-            <div class="timeline-target">Phase 1</div>
+            <div class="timeline-target">phase 1</div>
           </div>
           <div class="timeline-row">
             <div class="timeline-phase"><span class="dot"></span>Phase 2</div>
             <div class="timeline-activity">Full-service and resort properties</div>
-            <div class="timeline-target">Phase 2</div>
+            <div class="timeline-target">phase 2</div>
           </div>
           <div class="timeline-row live">
             <div class="timeline-phase"><span class="dot"></span>Ongoing</div>
@@ -1934,7 +1908,7 @@
 <!-- ──────────── SECTION 06: COLLATERAL LIBRARY ──────────── -->
 <section id="library">
   <div class="container">
-    <div class="eyebrow">Section 06 &nbsp;/&nbsp; Collateral Library</div>
+    <div class="eyebrow">section 06 &nbsp;/&nbsp; collateral library</div>
     <h2 class="section-title">Everything in one place.</h2>
     <p class="section-sub">Background materials Stacy and Meaghan can review ahead of June 3.</p>
 
@@ -1989,7 +1963,7 @@
 <!-- ──────────── SECTION 07: FAQ ──────────── -->
 <section id="faq">
   <div class="container">
-    <div class="eyebrow">Section 07 &nbsp;/&nbsp; FAQs</div>
+    <div class="eyebrow">section 07 &nbsp;/&nbsp; faqs</div>
     <h2 class="section-title">Questions we expect — answered directly.</h2>
     <p class="section-sub">If something's missing, email Zander and we'll add it before June 3.</p>
 
@@ -2040,7 +2014,7 @@
 <!-- ──────────── SECTION 08: CONTACT ──────────── -->
 <section id="booking" class="contact-section">
   <div class="container">
-    <div class="eyebrow">Section 08 &nbsp;/&nbsp; Contact</div>
+    <div class="eyebrow">section 08 &nbsp;/&nbsp; contact</div>
     <h2 class="section-title">Reach us directly.</h2>
     <p class="section-sub">Your direct line to the Reeco team building this for Peregrine.</p>
 
@@ -2101,7 +2075,7 @@
       <span style="font-size:11px; color: var(--stone-500); letter-spacing: 1.5px; text-transform: uppercase; font-weight: var(--fw-bold);">/// digital sales room</span>
     </div>
     <div class="footer-note">
-      <strong>Private &amp; shareable by link.</strong> This page was built for Damion Severin, Stacy Galligan, and Meaghan DeGuisto at Peregrine Hospitality. It is not indexed or gated. Learn more at <a href="https://www.reeco.com" target="_blank" rel="noopener">reeco.com</a>.
+      <strong>Private &amp; shareable by link.</strong> This page was built for Damion Severin, Stacy Galligan, and Meaghan DeGuisto at Peregrine Hospitality. It is not indexed or gated.
     </div>
   </div>
 </footer>
