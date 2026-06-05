@@ -37,7 +37,7 @@
   .nav-links { display: none; margin-left: auto; gap: 22px; }
   .nav-links a { color: var(--navy-900); font-size: 14px; font-weight: var(--fw-bold); text-decoration: none; white-space: nowrap; }
   .nav-links a:hover { color: var(--mint-700); }
-  .nav-cta { margin-left: auto; }
+  .nav-cta { margin-left: 0; }
   @media (min-width: 980px) {
     .nav-links { display: flex; }
     .nav-cta { margin-left: 24px; }
@@ -76,6 +76,14 @@
   .eyebrow::before {
     content: "///"; color: var(--mint-500); letter-spacing: 0;
   }
+  section h3 {
+    font-size: 20px; font-weight: var(--fw-bold);
+    color: var(--navy-900); letter-spacing: -0.01em;
+    line-height: 1.25; margin: 0 0 12px;
+  }
+  .pricing-section h3, .soundbite-section h3,
+  .contact-section h3 { color: #fff; }
+
   .section-title {
     font-size: 44px; font-weight: var(--fw-black);
     letter-spacing: -0.012em; line-height: 1.1;
@@ -688,7 +696,7 @@
     height: 100%;
   }
   .pricing-cta-card h3 {
-    font-size: 22px; font-weight: var(--fw-bold);
+    font-size: 20px; font-weight: var(--fw-bold);
     margin: 0 0 10px; color: var(--navy-900);
     letter-spacing: -0.01em; line-height: 1.25;
   }
@@ -786,7 +794,7 @@
     flex: 1; min-width: 280px;
   }
   .pricing-v2-header-l h3 {
-    font-size: 22px; font-weight: var(--fw-bold);
+    font-size: 20px; font-weight: var(--fw-bold);
     color: var(--navy-900); margin: 0 0 8px;
     letter-spacing: -0.005em;
   }
@@ -1318,7 +1326,7 @@
   .ps-eyebrow.problem .ps-dot { background: var(--rose-500); }
   .ps-eyebrow.answer .ps-dot { background: var(--mint-500); }
   .ps-headline {
-    font-size: 19px; font-weight: var(--fw-bold);
+    font-size: 20px; font-weight: var(--fw-bold);
     color: var(--navy-900); margin: 0 0 12px;
     letter-spacing: -0.005em; line-height: 1.25;
   }
@@ -1463,6 +1471,68 @@
     background: #fff; border: 2px solid var(--mint-500);
     box-shadow: 0 0 0 1px var(--stone-200);
   }
+  .ht-step.done { opacity: 0.45; }
+  .ht-step.done::before {
+    background: var(--stone-300); border-color: var(--stone-300);
+    box-shadow: none;
+  }
+  .ht-step.active::before {
+    background: var(--mint-500);
+    box-shadow: 0 0 0 4px rgba(43,204,137,0.18), 0 0 0 1px var(--mint-200);
+  }
+  .ht-step.active .ht-step-num { color: var(--mint-700); }
+  .ht-step.active .ht-step-title { color: var(--navy-900); font-size: 15px; }
+
+  /* ──────────────── SOUNDBITES ──────────────── */
+  .soundbite-section { background: var(--navy-900); }
+  .soundbite-section .eyebrow { color: var(--mint-300); }
+  .soundbite-section .eyebrow::before { color: var(--mint-300); }
+  .soundbite-section .section-title { color: #fff; }
+  .soundbite-section .section-sub { color: rgba(255,255,255,0.6); margin-bottom: 40px; }
+  .soundbite-grid {
+    display: flex; flex-wrap: wrap; gap: 20px;
+    justify-content: center;
+  }
+  .soundbite-card {
+    flex: 1 1 calc(33.333% - 16px);
+    min-width: 260px; max-width: 340px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: var(--radius-xl);
+    padding: 28px 24px 22px;
+    text-decoration: none;
+    display: flex; flex-direction: column; gap: 14px;
+    transition: all 160ms var(--ease-out);
+  }
+  .soundbite-card:hover {
+    background: rgba(255,255,255,0.11);
+    border-color: var(--mint-500);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+  .soundbite-play {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--mint-500);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: background 160ms var(--ease-out);
+  }
+  .soundbite-card:hover .soundbite-play { background: var(--mint-700); }
+  .soundbite-label {
+    font-size: 10px; font-weight: var(--fw-bold);
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--mint-300); margin-bottom: 3px;
+  }
+  .soundbite-title {
+    font-size: 15px; font-weight: var(--fw-bold);
+    color: #fff; line-height: 1.35;
+    letter-spacing: -0.005em;
+  }
+  .soundbite-cta {
+    font-size: 13px; font-weight: var(--fw-semi);
+    color: var(--mint-300); margin-top: auto;
+    display: flex; align-items: center; gap: 6px;
+  }
   .ht-step-num {
     font-size: 10px; font-weight: var(--fw-bold);
     letter-spacing: 2px; text-transform: uppercase;
@@ -1506,6 +1576,7 @@
       <a href="#library">Library</a>
       <a href="#faq">FAQ</a>
     </div>
+    <a href="#demo" class="btn btn-ghost" style="margin-left:auto;">Demo recording</a>
     <a href="https://calendar.app.google/98SYgLUXy6JNJTvr8" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Schedule 30 min <span class="arr">→</span></a>
   </div>
 </nav>
@@ -1523,22 +1594,22 @@
       </div>
       <div class="hero-actions">
         <a href="https://calendar.app.google/98SYgLUXy6JNJTvr8" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="background: var(--navy-900);">Schedule 30 minutes with Zander <span class="arr">→</span></a>
-        <a href="#platform" class="btn btn-on-mint btn-lg">See the solution</a>
+        <a href="#demo" class="btn btn-on-mint btn-lg">Watch the demo</a>
       </div>
     </div>
 
     <aside class="meeting-card" aria-label="Meeting context">
       <div class="meeting-eyebrow">Next Step</div>
-      <div class="meeting-title">Proposal Meeting</div>
+      <div class="meeting-title">Follow-Up Call</div>
       <div class="meeting-when">
         <div class="meeting-when-date">
-          <span class="day">03</span>
-          <span class="mon">Jun</span>
+          <span class="day" style="font-size:19px; letter-spacing:-0.02em;">Mid</span>
+          <span class="mon">Jul</span>
         </div>
         <div class="meeting-when-meta">
-          <div class="l1">Wednesday, June 3, 2026</div>
-          <div class="l2">10:00 AM MT &nbsp;·&nbsp; 30 minutes</div>
-          <div class="l3">Demo + Proposal Review</div>
+          <div class="l1">Mid-July 2026</div>
+          <div class="l2">After Coupa cost assessment</div>
+          <div class="l3">Decision timing + remaining questions</div>
         </div>
       </div>
 
@@ -1596,15 +1667,15 @@
       <div class="hero-timeline-eyebrow">/// What Happens Next</div>
       <div class="hero-timeline-title">From Here to Kickoff</div>
     </div>
-    <div class="ht-step">
+    <div class="ht-step done">
       <div class="ht-step-num">Step 01</div>
       <div class="ht-step-title">Demo + proposal review</div>
-      <div class="ht-step-date">June 3, 2026 · 10:00 AM MT</div>
+      <div class="ht-step-date">June 3, 2026 · Done</div>
     </div>
-    <div class="ht-step future">
+    <div class="ht-step active">
       <div class="ht-step-num">Step 02</div>
-      <div class="ht-step-title">Contract review</div>
-      <div class="ht-step-date">June 2026 · MSA + legal</div>
+      <div class="ht-step-title">Follow-up call</div>
+      <div class="ht-step-date">Mid-July 2026 · After Coupa assessment</div>
     </div>
     <div class="ht-step future">
       <div class="ht-step-num">Step 03</div>
@@ -1618,6 +1689,74 @@
     </div>
   </div>
 </div>
+
+<!-- ──────────── SOUNDBITES: SEE IT IN ACTION ──────────── -->
+<section id="demo" class="soundbite-section">
+  <div class="container">
+    <div class="eyebrow">June 3 Demo &nbsp;/&nbsp; See It In Action</div>
+    <h2 class="section-title">Five clips from the demo.</h2>
+    <p class="section-sub">Jump to any topic — each clip is a focused excerpt from the June 3 session.</p>
+    <div class="soundbite-grid">
+
+      <a class="soundbite-card" href="https://app.fireflies.ai/soundbites/w4fBIIw6XN0" target="_blank" rel="noopener">
+        <div class="soundbite-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        </div>
+        <div>
+          <div class="soundbite-label">Purchasing</div>
+          <div class="soundbite-title">Price Shopping in a Single Marketplace</div>
+        </div>
+        <div class="soundbite-cta">Watch clip <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
+
+      <a class="soundbite-card" href="https://app.fireflies.ai/soundbites/vAvyLMmPkII" target="_blank" rel="noopener">
+        <div class="soundbite-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        </div>
+        <div>
+          <div class="soundbite-label">Integrations</div>
+          <div class="soundbite-title">Leveraging ProfitSword Forecasts at the PO &amp; Approval Gates</div>
+        </div>
+        <div class="soundbite-cta">Watch clip <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
+
+      <a class="soundbite-card" href="https://app.fireflies.ai/soundbites/YeJca25717D" target="_blank" rel="noopener">
+        <div class="soundbite-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        </div>
+        <div>
+          <div class="soundbite-label">AP Automation</div>
+          <div class="soundbite-title">Automatic 3-Way Match with Sage Intacct</div>
+        </div>
+        <div class="soundbite-cta">Watch clip <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
+
+      <a class="soundbite-card" href="https://app.fireflies.ai/soundbites/E2sPRSu11Ir" target="_blank" rel="noopener">
+        <div class="soundbite-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        </div>
+        <div>
+          <div class="soundbite-label">Platform</div>
+          <div class="soundbite-title">Inventory &amp; Culinary: One Platform Solution</div>
+        </div>
+        <div class="soundbite-cta">Watch clip <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
+
+      <a class="soundbite-card" href="https://app.fireflies.ai/soundbites/MoSh3IVSGv3" target="_blank" rel="noopener">
+        <div class="soundbite-play">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        </div>
+        <div>
+          <div class="soundbite-label">Customer Success</div>
+          <div class="soundbite-title">Implementation &amp; Customer Success: By Hoteliers, For Hoteliers</div>
+        </div>
+        <div class="soundbite-cta">Watch clip <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- ──────────── SECTION 02: PROBLEM + SOLUTION (merged) ──────────── -->
 <section id="problem">
@@ -1890,7 +2029,7 @@
 
     <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; align-items: stretch;" class="impl-row">
       <div style="background:#fff; border:1px solid var(--stone-200); border-radius: var(--radius-2xl); padding: 32px;">
-        <h3 style="font-size: 20px; font-weight: var(--fw-bold); color: var(--navy-900); margin: 0 0 16px; letter-spacing:-0.01em;">Implementation approach</h3>
+        <h3 style="color: var(--navy-900); margin: 0 0 16px;">Implementation approach</h3>
         <p style="font-size:14px; line-height:1.6; color: var(--stone-700); margin: 0 0 20px;">Reeco's onboarding team manages the integration setup and property configuration. Implementation does not require a dedicated full-time resource on your team.</p>
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
           <li style="display: grid; grid-template-columns: 24px 1fr; gap: 10px; font-size: 14px; line-height: 1.5; color: var(--stone-700);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--mint-700)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-top:1px;"><polyline points="20 6 9 17 4 12"/></svg> <span><strong style="color:var(--navy-900)">No dedicated FTE required</strong> from your team to manage the rollout.</span></li>
@@ -2082,8 +2221,8 @@
 
     <div class="booking-card">
       <div>
-        <h3>Schedule 30 minutes with Zander.</h3>
-        <p>Have a question before June 3? Email zanders@reeco.com directly — same-day response.</p>
+        <h3>Follow-up call scheduled for mid-July.</h3>
+        <p>Questions before then? Email zanders@reeco.com directly — same-day response.</p>
       </div>
       <div class="booking-cta">
         <a href="https://calendar.app.google/98SYgLUXy6JNJTvr8" target="_blank" rel="noopener" class="btn btn-on-mint btn-lg" style="background:var(--navy-900);color:#fff;">Book time with Zander <span class="arr">→</span></a>
